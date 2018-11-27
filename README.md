@@ -8,4 +8,4 @@ TODO:
 + user modification of file headers
 + misc bugs and crashes
 
-I'm deciding to upload the source code for BOSshell, hopefuly someone can help me fix some of the issues i'm having, specifically with running programs.
+I've decided to upload the source code for BOSshell so hopefully someone can help me fix some of the issues I'm having, specifically with running programs.
