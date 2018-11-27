@@ -1,0 +1,38 @@
+D02655: tempFreeArc
+D0118C: asm_prgm_size
+
+000000h: Start of flash. The first 128 K are locked boot sectors. The first 8 are divided into 8 K sectors, all of which are locked. The certificate is now a single 64 K sector, so I hope you don't crash while rebuilding it.
+000066h: Flash exception handler. Write-to-flash without permission triggers the non-maskable interrupt to fire.
+00007Eh: Hardware/Emu flag: This byte indicates whether the ROM is a hardware ROM or emulator.
+000080h: Start of boot code jump table.
+020000h: Start of OS.
+0C0000h: Start of user archive.
+3B0000h: Certificate.
+3C0000h: Temp RAM backup, on newer versions of TIOS debug output is also written here.
+3E0000h: Temp RAM backup.
+3F0000h: Temp RAM backup, temp certificate backup, swap sector.
+400000h: Can be setup to mirror flash, but usually unmapped.
+800000h: Always unmapped.
+D00000h: Start of RAM. 256 K.
+D1A87Eh: Top of the SPL stack.
+D1A881h: Start of UserMem.
+D40000h: Start of VRAM. 320x240x2 bytes = 153600 bytes.
+D65800h: Unmapped memory.
+D80000h: Mirror of D00000h.
+E00000h: Start of memory-mapped I/O address spaces.
+SafeRAM Areas:
+
+D031F6h: pixelShadow - 8400 bytes
+D052C6h: pixelShadow2 - 8400 bytes
+D07396h: cmdPixelShadow - 8400 bytes
+D09466h: plotSScreen - 21945 bytes
+D0EA1Fh: saveSScreen - 21945 bytes
+Note that the above is contiguous, which provides a total linear free space of 69090 bytes of RAM.
+pixelShadow2 is the most stable; and is a viable option for testing TSRs and hooks.
+More SafeRAM Areas:
+
+D006C0h: textShadow - 260 bytes
+D0232Dh: cmdShadow - 260 bytes
+Also, if you do not wish to use the LCD cursor (This is not RAM, but can be used as scrap)
+
+E30800h: cursorImage - 1024 bytes

@@ -1,0 +1,53 @@
+[i]A
+Lbl PONG
+1→DIRTY
+det(9,0
+det(76
+det(22,0
+det(20,0
+det(21,255
+160→BALLX
+120→BALLY
+1→BALLM
+100→PY
+Repeat K=15
+det(2,255
+det(11,1
+det(34,BALLX,BALLY,6
+det(36,10,PY,10,40
+det(36,300,EY,10,40
+[maxY]K
+det(2,0
+det(34,BALLX,BALLY,6
+det(36,10,PY,10,40
+det(36,300,EY,10,40
+min(200,max(40,PY+10*((K=1)-(K=4→PY
+BALLY-PY→A
+min(200,max(40,EY+8*((A≤256)-(A≥⁻256→EY
+BALLM/2→A
+BALLY+6*(A-not(A→BALLY
+remainder(BALLM,2→A
+BALLX+6*(A-not(A→BALLX
+If BALLX≤10
+If BALLY≥PY and BALLY≤PY+40
+BALLMplotsquare3→BALLM
+Else
+det(18,"YOU LOST!",100,110
+[maxY]K
+Goto PONG
+End
+End
+If BALLX≥310
+If BALLY≥EY and BALLY≤EY+40
+BALLMplotsquare3→BALLM
+Else
+det(18,"YOU WON!",100,110
+[maxY]K
+Goto PONG
+End
+End
+If BALLY≤5 or BALLY≥235
+BALLMplotsquare3→BALLM
+End
+End
+Return

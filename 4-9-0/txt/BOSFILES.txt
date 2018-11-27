@@ -1,0 +1,436 @@
+[i]A
+*{CONFG+68→CURDIR
+0→PGSCROLL
+1024→EDITBFFRL
+Σy²EDITBFFRL→EDITBFFR
+Goto BOSFILES
+Lbl RECDIR
+sum(1,DIRSFILE,"a+→D
+sum(4,FILE,8,1,D
+sum(13,1,D
+sum(3,D
+Return
+Lbl RENAMEDIR
+8→MAX
+det(19,CURX,CURY
+{PROMPTSTR+9→PROMPT
+[maxY]INPUT
+ReturnIf not(*{STR
+CURDIR*8→C
+sum(1,DIRSFILE,"r+→D
+sum(10,C,0,D
+sum(4,STR,8,1,D
+sum(13,1,D
+sum(3,D
+1→DIRTY
+Return
+Lbl RENAMEF
+[maxY]CURSELF
+ReturnIf ERR
+**{PAGEDAT+SEL→C
+ReturnIf C=65535
+FOLDS+C→F
+[maxY]FINPUT
+ReturnIf not(*{FILE
+sum(1,FILE,"r→D
+sum(6,D→C
+sum(3,D
+If C≠⁻1
+[maxY]AREUSURE
+ReturnIf not(ERR
+sum(8,FILE
+End
+sum(32,F,FILE
+ΣySTRBFFR+16,FILE,8
+F→FILE
+[maxY]REMF
+STRBFFR+16→FILE
+[maxY]RECF
+1→DIRTY
+Return
+Lbl INFOF
+[maxY]CURSELF
+ReturnIf ERR
+det(11,1
+det(19,X,Y
+**{PAGEDAT+SEL→C
+ReturnIf C=65535
+FOLDS+C→F
+sum(1,F,"r→D
+sum(18,D→T
+sum(16,D→L
+sum(12,D→A
+sum(6,D→C
+sum(3,D
+If C=⁻1
+det(17,"File does not exist!
+[maxY]K
+Return
+End
+det(20,TBC
+det(21,TCC
+det(17,F
+If L
+det(17,".
+det(17,T
+End
+det(19,X,Y+9
+det(17,"(Size: 
+If L
+det(15,L,0
+Else
+det(17,"0
+End
+det(17,"b
+det(19,X,Y+18
+det(17,"Location: 
+If A
+det(17,"Archive
+Else
+det(17,"RAM
+End
+det(17,")
+det(19,X,Y+27
+1+length(T→A
+If A<L and *{T+A
+det(17,"(
+det(17,T+A
+det(17,")
+End
+[maxY]K
+det(19,X,Y
+det(20,BGC
+det(21,TAC
+Return
+Lbl LASTPAGE
+16→I
+0→N
+Repeat I>L
+If **{FOLDS+I+8}=CURDIR
+N+1→N
+End
+I+10→I
+End
+N-remainder(N,24→PGSCROLL
+Return
+Lbl GETPAGE
+sum(1,FOLDSFILE,"r→D
+sum(18,D→FOLDS
+sum(16,D→FOLDSL
+sum(3,D
+16→I
+0→N
+ReturnIf FOLDSL≤I
+[maxY]FDIR
+ReturnIf not(R
+PGSCROLL→A
+Repeat I>FOLDSL or N=48
+If **{FOLDS+I+8}=CURDIR
+If A
+A-1→A
+Else
+I→**{PAGEDAT+N
+N+2→N
+End
+End
+I+10→I
+End
+N/2→NICONS
+ReturnIf N=48
+Repeat N=48
+65535→**{PAGEDAT+N
+N+2→N
+End
+Return
+Lbl NEWF
+[maxY]FTYPE
+ReturnIf TYPE=⁻1
+[maxY]FINPUT
+ReturnIf not(*{FILE
+sum(1,FILE,"r→D
+sum(6,D→C
+sum(3,D
+If C≠⁻1
+[maxY]AREUSURE
+ReturnIf not(ERR
+End
+sum(1,FILE,"w→D
+{FTYPESTR+TYPE*3→A
+sum(4,A,1+length(A),1,D
+sum(7,0,D
+sum(13,1,D
+sum(3,D
+[maxY]REMF
+[maxY]RECF
+Return
+Lbl FDIR
+sum(1,DIRSFILE,"r→D
+sum(16,D)/8→B
+sum(3,D
+If B≥CURDIR
+1→R
+Else
+0→R
+End
+Return
+Lbl REMF
+0→*{STRBFFR+8
+ReturnIf FOLDSL≤16
+FOLDS+16→P
+FOLDSL-16→L
+sum(1,TEMPFILE,"w→D
+sum(11,16,D
+sum(10,0,2,D
+0→*{STRBFFR+8
+Repeat L-1≥65536
+ΣySTRBFFR,P,8
+[maxY]DIRCPR2
+If not(R
+sum(4,P,10,1,D
+End
+P+10→P
+L-10→L
+End
+sum(3,D
+sum(8,FOLDSFILE
+sum(32,TEMPFILE,FOLDSFILE
+sum(1,FOLDSFILE,"r→D
+sum(18,D→FOLDS
+sum(16,D→FOLDSL
+sum(3,D
+Return
+Lbl RECF
+FOLDS+16→P
+FOLDSL-16→L
+sum(1,TEMPFILE,"w→D
+sum(11,L+26,D
+sum(10,16,0,D
+If L
+sum(4,P,L,1,D
+End
+sum(4,FILE,8,1,D
+sum(4,°CURDIR,2,1,D
+sum(3,D
+sum(8,FOLDSFILE
+sum(32,TEMPFILE,FOLDSFILE
+sum(1,FOLDSFILE,"r→D
+sum(18,D→FOLDS
+sum(16,D→FOLDSL
+sum(3,D
+1→DIRTY
+Return
+Lbl OPENF
+[maxY]CURSELF
+ReturnIf ERR
+FOLDS+**{PAGEDAT+SEL→FILE
+1→DIRTY
+0→EDITING
+Goto EDIT
+Lbl EDITF
+[maxY]CURSELF
+ReturnIf ERR
+FOLDS+**{PAGEDAT+SEL→FILE
+1→DIRTY
+1→EDITING
+AsmComp(BOSEDIT
+Return
+Lbl COPYF
+[maxY]CURSELF
+ReturnIf ERR
+FOLDS+**{PAGEDAT+SEL→F
+COPYBFFR→P
+1023→L
+[maxY]VOIDP
+2→*{COPYBFFR
+ΣyCOPYBFFR+1,FOLDS+**{PAGEDAT+SEL},8
+CURDIR→**{COPYBFFR+9
+Return
+Lbl CUTF
+[maxY]CURSELF
+ReturnIf ERR
+FOLDS+**{PAGEDAT+SEL→F
+COPYBFFR→P
+1023→L
+[maxY]VOIDP
+3→*{COPYBFFR
+ΣyCOPYBFFR+1,FOLDS+**{PAGEDAT+SEL},8
+CURDIR→**{COPYBFFR+9
+Return
+Lbl PASTEF
+*{COPYBFFR→G
+If G=2
+[maxY]FINPUT
+ReturnIf not(*{FILE
+sum(1,FILE,"r→D
+sum(6,D→C
+sum(3,D
+If C≠⁻1
+[maxY]AREUSURE
+ReturnIf not(ERR
+End
+End
+If G=2 or G=3
+ReturnIf not(*{COPYBFFR+1
+sum(1,COPYBFFR+1,"r→D
+sum(18,D→P
+sum(16,D→L
+sum(6,D→C
+sum(3,D
+ReturnIf C=⁻1
+If G=3
+sum(1,TEMPFILE,"w→D
+sum(11,L,D
+sum(4,P,L,1,D
+sum(13,1,D
+sum(3,D
+sum(1,TEMPFILE,"r→D
+sum(18,D→P
+sum(16,D→L
+sum(3,D
+End
+sum(1,FILE,"w→D
+sum(11,L,D
+sum(4,P,L,1,D
+sum(13,1,D
+sum(3,D
+[maxY]REMF
+[maxY]RECF
+If G=3
+COPYBFFR+1→FILE
+[maxY]REMF
+sum(8,FILE
+End
+1→DIRTY
+End
+Return
+Lbl DELF
+[maxY]CURSELF
+ReturnIf ERR
+**{PAGEDAT+SEL→FILE
+ReturnIf FILE=65535
+FOLDS+FILE→FILE
+[maxY]AREUSURE
+ReturnIf not(ERR
+[maxY]REMF
+sum(8,FILE
+1→DIRTY
+Return
+Lbl IMPORTF
+[maxY]FINPUT
+ReturnIf not(*{FILE
+sum(1,FILE,"r→D
+sum(6,D→C
+sum(3,D
+ReturnIf C=⁻1
+[maxY]REMF
+[maxY]RECF
+1→DIRTY
+Return
+Lbl REMOVEF
+[maxY]CURSELF
+ReturnIf ERR
+FOLDS+**{PAGEDAT+SEL→FILE
+[maxY]AREUSURE
+ReturnIf not(ERR
+**{PAGEDAT+SEL→C
+ReturnIf C=65536
+FOLDS+C→FILE
+[maxY]REMF
+1→DIRTY
+Return
+Lbl DIRCPR2
+0→A
+1→R
+Repeat not(C and R
+*{STRBFFR+A→C
+R and C=*{FILE+A→R
+A+1→A
+End
+Return
+Lbl NEXTNZ
+0→B
+Repeat *{I+B
+B+1→B
+L-1→L
+End
+Return
+Lbl FINPUT
+8→MAX
+det(19,X,Y
+{PROMPTSTR→PROMPT
+[maxY]INPUT
+STR→FILE
+Return
+Lbl FTYPE
+0→TYPE
+det(22,TBC
+det(20,TBC
+det(21,TCC
+Repeat K=15 or K=9 or K=50 or K=54
+det(11,1
+det(19,X,Y
+det(17,"Type?<
+det(17,{FTYPESTR+TYPE*3
+det(17,">
+[maxY]K
+If K=3
+TYPE+1→TYPE
+If TYPE=FTYPESTRN
+0→TYPE
+End
+End
+If K=2
+TYPE-1→TYPE
+If TYPE=⁻1
+FTYPESTRN-1→TYPE
+End
+End
+End
+If K=15
+⁻1→TYPE
+End
+det(20,BGC
+det(21,TAC
+Return
+Lbl CURSELF
+1→ERR
+If CURY>20 and CURY<142 and CURX≥10 and CURX≤310
+12*((CURY-20)/30)+2*((CURX-10)/50→SEL
+If **{PAGEDAT+SEL}≠65535
+0→ERR
+End
+End
+Return
+Lbl VOIDP
+Repeat not(L
+0→*{P+L
+L-1→L
+End
+Return
+Lbl AREUSURE
+det(9,0
+det(20,TBC
+det(21,TCC
+0→ERR
+Repeat K=15 or K=9 or K=50 or K=54
+det(11,1
+det(19,X,Y
+det(17,"Are you sure?<
+If ERR
+det(17,"yes
+Else
+det(17,"no
+End
+det(17,">
+[maxY]K
+If K=3 or K=2
+K=3→ERR
+End
+End
+If K=15
+0→ERR
+End
+det(20,BGC
+det(21,TAC
+Return
+Lbl BOSFILES

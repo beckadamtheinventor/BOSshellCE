@@ -1,0 +1,19 @@
+FindLists:
+ B_CALL ZeroOP1
+ LD A,ListObj
+ LD (OP1),A ; looking for a list
+ LD A,tVarLst ; list designator token
+ LD (OP1+1),A ;
+ LD A,0FFh ; set name to FFh, so that the
+; first list alphabetically is
+; found
+ LD (OP1+1),A
+FindLoop:
+ B_CALL FindAlphaUp ; see if find another list name
+ RET C ; return if no more list names
+; not found yet
+;
+; OP1 = next list name
+;
+ JR FindLoop ; find next using one just found
+; as input 
