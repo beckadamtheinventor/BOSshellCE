@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>BOSshell CE</title>
+  <link rel = "stylesheet" type = "text/css" href = "style_main.css"/>
+</head>
+<body>
+  <iframe class="top" src="head.html"></iframe>
+  <div class="sidebar">
+    <p><a href="index.html">Index</a></p>
+    <p><h3>Developers Info</h3><br>
+    <a href="config.html">config file</a><br>
+    <a href="packets.html">Packet file</a><br>
+    </p>
+  </div>
+  <div class="main">
+    <p><h1>Packet file appvar</h1></p>
+    <p>Name: "<a class="str">__B</a>" Hex: "<a class="hex">5F5F41</a>"<br>
+    This appvar is initialized whenever BOSshell runs a program to open a file.<br>
+    Contents:<br>
+    1b Editing byte. This will be 1 if file is being opened for editing, else will be 0<br>
+    1b variable type of variable being opened.<br>
+    8b name of variable to edit.<br>
+    File type string. This is basically the starting bytes of the file up until and including the first null byte
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+BOSfolds_ex = {
+"BOSfolds", 0x00,
+0x010904,
+0x0000000000,
+"BOSconfg", 0x0000,
+"BOSdata",0x000000,
+"hellowd",0x000000,
+"newXfile",0x0000
+}

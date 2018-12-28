@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+  color: #7850FF;
+  overflow-y: hidden;
+  margin-top: .2em;
+}
+a.title {
+  color: #5050FF;
+}
+a.titleEm {
+  color: #3030FF;
+}
+a.ceEm {
+  color: #58A0B0;
+}
+h1{
+  font-size: 1000%;
+}
