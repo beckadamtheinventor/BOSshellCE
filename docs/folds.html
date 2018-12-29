@@ -15,19 +15,17 @@
     </p>
   </div>
   <div class="main">
-    <p><h1>BOSshell Config appvar</h1><br>
-      Name: <a class="str">BOSconfg</a><br>
+    <p><h1>Filesystem appvar</h1><br>
+      Name: <a class="str">BOSfolds</a><br>
     <h2>Data structure</h2></p>
-    <p>13b empty space<br>
-      3b version number<br>
-      1b Background color<br>
-      1b Text A color<br>
-      1b Text B color<br>
-      1b Text C color<br>
-      64b empty space<br>
-      2b current page number<br>
-      2b cursor X position<br>
-      1b cursor Y position
+    <p>16b empty space<br>
+      10b file entry<br>
+      10b file entry<br>
+      ...<br></p>
+    <hr>
+    <p>Each file entry consists of:<br>
+      8b file Name<br>
+      2b box number<br>
     </p>
   </div>
 </body>

@@ -1,5 +1,5 @@
 body {
-  background-color: #107030;
+  background-color: #007030;
 }
 h2 {
   color: #E0C0C0;
@@ -11,10 +11,10 @@ p {
   color: #FFE0E0;
 }
 a {
-  color: #FFA8B0;
+  color: #200020;
 }
 a:visited{
-  color: #FFA840;
+  color: #200050;
 }
 div.main {
   position: fixed;
@@ -24,6 +24,7 @@ div.main {
   height: 72%;
   padding-left: 2%;
   overflow-y: scroll;
+  color: white;
 }
 a.hex {
   color: #20FF80
@@ -41,16 +42,6 @@ iframe.top {
   left: 10%;
   width: 90%;
   height: 25%;
-}
-iframe.mid {
-  margin: 0;
-  padding 0;
-  border: none;
-  border-bottom: 1px solid #FFE0E0;
-  overflow-y: scroll;
-  position: fixed;
-  left: 10%;
-  width: 90%;
 }
 div.sidebar {
   position: fixed;

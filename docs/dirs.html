@@ -15,19 +15,13 @@
     </p>
   </div>
   <div class="main">
-    <p><h1>BOSshell Config appvar</h1><br>
-      Name: <a class="str">BOSconfg</a><br>
-    <h2>Data structure</h2></p>
-    <p>13b empty space<br>
-      3b version number<br>
-      1b Background color<br>
-      1b Text A color<br>
-      1b Text B color<br>
-      1b Text C color<br>
-      64b empty space<br>
-      2b current page number<br>
-      2b cursor X position<br>
-      1b cursor Y position
+    <p><h1>Directory names appvar</h1></p>
+    <p>Name: <a class="str">BOSdirs</a><br>
+      <h2>Data structure</h2>
+      8b directory name
+      <hr>
+      Repeat this 1024 times.<br>
+      To get one directory's name, just take the box number and multiply it by 8.
     </p>
   </div>
 </body>
