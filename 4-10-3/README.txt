@@ -1,4 +1,4 @@
-BOSshell version 4.10.2 for TI-84+CE
+BOSshell version 4.10.3 for TI-84+CE
 by beckadamtheinventor
 
 
@@ -112,4 +112,7 @@ CHANGELOG:
 --Added xgif viewer
 --Fixed the BOSshell website
 --Made this README more clear and added READMEs for editors
+-4.10.3: Second release (hotfix)
+--Fixed text overflowing the screen and occasionaly crashing
+--Made text overtype persist between inputs
 
