@@ -1,0 +1,15 @@
+'xgif' viewer for BOSshell
+beckadamtheinventor
+
+This program is built to be run from BOSshell as an external editor, and it cannot be run on it's own.
+It will simply return if it is not opened from BOSshell, or if it is run by itself.
+
+
+If the file has been opened, it will display the image.
+If it just returns, the image is empty. Edit the file to add contents.
+Press [clear] to return to BOSshell.
+
+If the file is being edited, it will prompt for a sprite set, then for a delay.
+At this time, the easiest way to make a sprite set is to use TileMapE (beckadamtheinventor) and export the tileset.
+The delay (in sets of 8 milliseconds) is the time between frames.
+
