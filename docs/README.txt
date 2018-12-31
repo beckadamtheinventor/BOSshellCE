@@ -1,4 +1,4 @@
-BOSshell version 4.10.5 for TI-84+CE
+BOSshell version 4.10.6 for TI-84+CE
 by beckadamtheinventor
 
 
@@ -120,4 +120,8 @@ CHANGELOG:
 --Added running asm programs from appvars imported to the desktop
 --Fixed asm appvars on the desktop displaying non-printable characters
 --Added a program to copy asm programs to appvars
+-4.10.6: Third release
+--Made cursor move faster
+--Allowed pressing of multiple arrow keys to move the cursor
+--Added popup when saving in the ximg editor, to confirm that, yes, you did save.
 
