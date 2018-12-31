@@ -1,4 +1,4 @@
-BOSshell version 4.10.2 for TI-84+CE
+BOSshell version 4.10.5 for TI-84+CE
 by beckadamtheinventor
 
 
@@ -107,9 +107,17 @@ CHANGELOG:
 --Added more shortcut keys
 --Many small bugfixes
 -4.10.2: Second release
---Added running programs from the shell without opening them within the shell
+--Added running programs from the shell without opening them via a file association
 --Added file association management
 --Added xgif viewer
 --Fixed the BOSshell website
 --Made this README more clear and added READMEs for editors
+-4.10.3: Second release (hotfix)
+--Fixed text overflowing the screen and occasionaly crashing
+--Made text overtype persist between inputs
+-4.10.5: Second release (hotfix 2)
+--Fixed files not being removed from the desktop
+--Added running asm programs from appvars imported to the desktop
+--Fixed asm appvars on the desktop displaying non-printable characters
+--Added a program to copy asm programs to appvars
 
