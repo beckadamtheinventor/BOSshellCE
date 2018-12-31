@@ -1,0 +1,22 @@
+'ximg' editor for BOSshell
+beckadamtheinventor
+
+This program is built to be run from BOSshell as an external editor, and it cannot be run on it's own.
+It will simply return if it is not opened from BOSshell, or if it is run by itself.
+
+This program will open the image for editing regardless of whether it has been opened or being edited.
+
+
+KEYS:
+arrows: move cursor
+[clear]: return to BOSshell
+[mode]: save image
+[2nd]/[enter]: put pixel color at cursor
+[alpha]: get pixel color at cursor
+[mode]: change current color
+[y=]: fill rectangle with current color. Press once at point A, then press it again at point B to fill a rectangle.
+[window]: replace color at cursor with current color
+
+NOTES:
+This program does not autosave, press [mode] to save.
+Pressing [clear] does not save, just returns to BOSshell.
