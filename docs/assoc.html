@@ -31,15 +31,12 @@
     </p>
   </div>
   <div class="main">
-    <p><h1>Packet file appvar</h1></p>
-    <p>Name: <a class="str">__B</a> Hex: <a class="hex">5F5F42</a><br>
-      <h2>Data structure</h2><br>
-      This appvar is initialized whenever BOSshell runs a program to open a file.<br>
-      Contents:<br>
-      1b Editing byte. This will be 1 if file is being opened for editing, else will be 0<br>
-      1b variable type of variable being opened.<br>
-      8b name of variable to edit.<br>
-      File type string. This is basically the starting bytes of the file up until and including the first null byte
+    <p><h1>BOSshell Config appvar</h1><br>
+      Name: <a class="str">BOSconfg</a><br>
+    <h2>Data structure</h2></p>
+    <p>7b file extension<br>
+    1b editor type byte<br>
+    8b editor name<br>
     </p>
   </div>
 </body>
