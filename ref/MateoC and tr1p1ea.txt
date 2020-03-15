@@ -1,6 +1,0 @@
-6:38:03 PM [tr1p1ea] Mateo is saying that the ret for the program needs to know where to return to correctly
-6:37:53 PM [beckadamtheinventor] ohhhhh
-6:37:50 PM [#] [commandz] so, my program crashes while trying to get device descriptors, but only when the serial device is actually connected to something else
-6:37:45 PM [#] [MateoC] When the program finishes, you want it to return to the stub
-6:37:31 PM [#] [MateoC] Jump to the program
-6:37:25 PM [#] [MateoC] You put the stub on the stack

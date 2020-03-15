@@ -16,6 +16,7 @@
     <a href="packets.html">Packet file</a>
     <hr>
     <a href="README.txt">README</a><br>
+    <a href="LICENSE.txt">LICENSE</a><br>
     <a href="keymap.txt">Keymap</a><br>
     <hr>
     <h3>Editors&Viewers</h3><br>
@@ -23,27 +24,24 @@
     <a href="BOSxgifV.txt">xgif</a><br>
     <a href="BOSptoav.txt">prgm->avar</a>
     <hr>
-    <h3>Releases</h3><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.6">4.10.6</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.5">4.10.5</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.2">4.10.2</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.0">4.10.0</a>
+    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.11.0">4.11.0</a><br>
     </p>
   </div>
+
   <div class="main">
     <p><h1>BOSshell Config appvar</h1><br>
       Name: <a class="str">BOSconfg</a><br>
     <h2>Data structure</h2></p>
-    <p>13b empty space<br>
-      3b version number<br>
+    <p>16b file header. Mostly unused<br>
       1b Background color<br>
       1b Text A color<br>
       1b Text B color<br>
       1b Text C color<br>
-      64b empty space<br>
-      2b current page number<br>
+      64b unused space<br>
+      2b page number<br>
       2b cursor X position<br>
-      1b cursor Y position
+      1b cursor Y position<br>
+      2b page scroll
     </p>
   </div>
 </body>

@@ -5,7 +5,7 @@
 </head>
 <body>
   <iframe class="top" src="head.html"></iframe>
-  <div class="sidebar">
+    <div class="sidebar">
     <p><a href="index.html">Index</a>
     <hr>
     <p><h3>Developers Info</h3><br>
@@ -16,6 +16,7 @@
     <a href="packets.html">Packet file</a>
     <hr>
     <a href="README.txt">README</a><br>
+    <a href="LICENSE.txt">LICENSE</a><br>
     <a href="keymap.txt">Keymap</a><br>
     <hr>
     <h3>Editors&Viewers</h3><br>
@@ -23,18 +24,15 @@
     <a href="BOSxgifV.txt">xgif</a><br>
     <a href="BOSptoav.txt">prgm->avar</a>
     <hr>
-    <h3>Releases</h3><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.6">4.10.6</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.5">4.10.5</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.2">4.10.2</a><br>
-    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.10.0">4.10.0</a>
+    <a href="https://github.com/beckadamtheinventor/BOSshellCE/releases/tag/4.11.0">4.11.0</a><br>
     </p>
   </div>
+
   <div class="main">
     <p><h1>BOSshell Config appvar</h1><br>
       Name: <a class="str">BOSconfg</a><br>
     <h2>Data structure</h2></p>
-    <p>1b Empty space<br><br>
+    <p>1b header. Should be 0xFF so BOSshell sees it as a ".dat" file<br><br>
     For each association:<br>
     7b file extension<br>
     1b editor type byte<br>

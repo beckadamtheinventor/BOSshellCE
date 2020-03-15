@@ -1,7 +1,0 @@
-util_del_prgm_from_usermem:
-	or	a,a
-	sbc	hl,hl
-	ld	de,(asm_prgm_size)		; get program size
-	ld	(asm_prgm_size),hl		; delete whatever was there
-	ld	hl,userMem
-	jp	_DelMem
