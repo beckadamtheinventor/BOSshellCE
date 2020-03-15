@@ -11,5 +11,5 @@ Press [clear] to return to BOSshell.
 
 If the file is being edited, it will prompt for a sprite set, then for a delay.
 At this time, the easiest way to make a sprite set is to use TileMapE (beckadamtheinventor) and export the tileset.
-The delay (in sets of 8 milliseconds) is the time between frames.
+The delay (in milliseconds) is the delay between frames.
 

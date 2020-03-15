@@ -22,7 +22,7 @@ Seriously, thank you all! :)
 
 
 INSTALLATION:
-Transfer "OOBE.8xg" to the calculator. (ex. TI-Connect, TILP)
+Transfer "BOSshell.tig" to the calculator. (ex. TI-Connect, TILP)
 Select "BOSSHELL" from the [prgm] list, then press [enter] to run it.
 The shell will load momentarily! :D
 
@@ -42,7 +42,7 @@ Each item in this menu does something different.
 <copy>   Add file to copy/cut buffer, to be copy->pasted
 <paste>  Paste file from copy/cut buffer
          Prompts for a file name. (pasted file name) If the name contains nothing, it will paste the file with the same name as before.
-<delete> Delete file (will delete from the calculator)
+<delete> Delete file. Alternatively you can press [del] (will delete from the calculator)
 <cut>    Add file to copy/cut buffer, to be cut->pasted
 <import> Add file to filesystem
          Prompts for a file name (file to import)
