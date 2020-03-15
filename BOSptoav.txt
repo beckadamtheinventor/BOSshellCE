@@ -1,7 +1,0 @@
-program to appvar converter for BOSshell
-beckadamtheinventor
-
-If this program is run on it's own, it will prompt for a program, then for an appvar name.
-
-If this program is run as an editor, it will prompt for a program and then copy it to the appvar which is currently being edited.
-

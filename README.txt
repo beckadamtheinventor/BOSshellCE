@@ -22,7 +22,7 @@ Seriously, thank you all! :)
 
 
 INSTALLATION:
-Transfer "BOSshell.tig" to the calculator. (ex. TI-Connect, TILP)
+Transfer "BOSSHELL.tig" to the calculator. (ex. TI-Connect, TILP)
 Select "BOSSHELL" from the [prgm] list, then press [enter] to run it.
 The shell will load momentarily! :D
 
