@@ -11,19 +11,19 @@ p {
   color: #FFE0E0;
 }
 a {
-  color: #200020;
+  color: #300020;
 }
 a:visited{
-  color: #200050;
+  color: #300050;
 }
 div.main {
   position: fixed;
   left: 10%;
   top: 28%;
-  width: 90%;
+  width: 88%;
   height: 72%;
   padding-left: 2%;
-  overflow-y: scroll;
+  overflow-y: auto;
   color: white;
 }
 a.hex {
@@ -34,7 +34,7 @@ a.str {
 }
 iframe.top {
   margin: 0;
-  padding 0;
+  padding: 0;
   border: none;
   border-bottom: 1px solid #FFE0E0;
   overflow-y: hidden;
@@ -43,7 +43,7 @@ iframe.top {
   width: 90%;
   height: 25%;
 }
-div.sidebar {
+iframe.sidebar {
   position: fixed;
   left: 0%;
   top: 0%;
