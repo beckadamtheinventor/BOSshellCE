@@ -1,4 +1,4 @@
-BOSshell version 4.11.0 for the TI-84+CE family
+BOSshell version 4.11.1 for the TI-84+CE family
 Adam "beckadamtheinventor" Beckingham
 
 LICENSED UNDER GPL3.
@@ -148,5 +148,11 @@ CHANGELOG:
 --Bugs squashed
 --Slowed down cursor, was way to fast before
 --More efficient code and code size
+-4.11.1: Release 4 patch 1
+--Add safer archive routine
+--Fix file names not showing up in the GUI due to non-alphanumeric characters
+--Fix [del] key not deleting files
+--Update file info GUI.
+--Remove redundant and unused code
 
 
