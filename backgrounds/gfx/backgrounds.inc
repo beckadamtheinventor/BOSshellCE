@@ -1,0 +1,5 @@
+include 'xlibc.asm'
+include 'BOSshell-background-0.asm'
+include 'BOSshell-background-1.asm'
+include 'BOSshell-background-2.asm'
+include 'BOSshell-background-Deep-Blue-Snow.asm'
