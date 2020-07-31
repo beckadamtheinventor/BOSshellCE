@@ -26,6 +26,9 @@ org ti.cursorImage
 	call ti.ChkFindSym
 	jr nc,.next
 	ld bc,stub.len+9
+	or a,a
+	sbc hl,hl
+	add hl,sp
 	add hl,bc
 	ld sp,hl
 	ret

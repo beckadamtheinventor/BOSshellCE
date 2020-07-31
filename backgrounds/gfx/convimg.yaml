@@ -8,7 +8,7 @@ output: asm
 
 convert: mybackgrounds
   palette: xlibc
-  transparent-color-index: 0
+  compress: zx7
   images:
-    - BOSshell-background-2.png
+    - bosbg2.png
 
